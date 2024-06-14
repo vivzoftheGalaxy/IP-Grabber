@@ -3,10 +3,10 @@
 
 Examples of how this should be used - 
 
-> Personal projects
+- Personal projects
 
-> Reference for technical things
+- Reference for technical things
 
-> Stuff that you need your IP for
+- Stuff that you need your IP for
 
 SHOULD NOT BE USED FOR HACKING OR OTHER MALICIOUS PURPOSES!!
