@@ -4,7 +4,9 @@
 Examples of how this should be used - 
 
 > Personal projects
+
 > Reference for technical things
+
 > Stuff that you need your IP for
 
 SHOULD NOT BE USED FOR HACKING OR OTHER MALICIOUS PURPOSES!!
