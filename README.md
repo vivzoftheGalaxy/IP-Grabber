@@ -11,4 +11,4 @@ Examples of how this should be used -
 
 SHOULD NOT BE USED FOR HACKING OR OTHER MALICIOUS PURPOSES!!
 
-> Note: Could be changed and any suggestions are welcome! :D
+> <b> Note: </b> Could be changed and any suggestions are welcome! :D
