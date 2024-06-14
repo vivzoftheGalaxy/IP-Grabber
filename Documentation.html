@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Script Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #bb86fc;
+        }
+        code {
+            background: #1f1f1f;
+            color: #bb86fc;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #1f1f1f;
+            color: #e0e0e0;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .header, .footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .footer {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Documentation for the Python Script</h1>
+    </div>
+
+    <h2>Overview</h2>
+    <p>This Python script performs several tasks, including:</p>
+    <ul>
+        <li>Installing necessary libraries (<code>requests</code> and <code>keyboard</code>) if they are not already installed.</li>
+        <li>Retrieving and displaying the public and private IP addresses of the machine.</li>
+        <li>Providing a user interface to toggle the display of IP addresses using keyboard inputs.</li>
+    </ul>
+    <p>The script is designed to be executed from the command line or a Python environment that supports keyboard input.</p>
+
+    <h2>Functions</h2>
+
+    <h3><code>install_library(library_name)</code></h3>
+    <p><strong>Purpose</strong>: Installs the specified Python library using pip.</p>
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+        <li><code>library_name</code> (str): The name of the library to be installed.</li>
+    </ul>
+    <p><strong>Usage</strong>:</p>
+    <pre><code>install_library('requests')</code></pre>
+
+    <h3><code>get_public_ip()</code></h3>
+    <p><strong>Purpose</strong>: Fetches the public IP address of the machine using the ipify API.</p>
+    <p><strong>Returns</strong>:</p>
+    <ul>
+        <li><code>str</code>: The public IP address or an error message if the request fails.</li>
+    </ul>
+    <p><strong>Usage</strong>:</p>
+    <pre><code>public_ip = get_public_ip()</code></pre>
+
+    <h3><code>get_private_ip()</code></h3>
+    <p><strong>Purpose</strong>: Retrieves the private IP address of the machine.</p>
+    <p><strong>Returns</strong>:</p>
+    <ul>
+        <li><code>str</code>: The private IP address or an error message if the retrieval fails.</li>
+    </ul>
+    <p><strong>Usage</strong>:</p>
+    <pre><code>private_ip = get_private_ip()</code></pre>
+
+    <h3><code>toggle_prompt()</code></h3>
+    <p><strong>Purpose</strong>: Provides a simple user interface to toggle between options using arrow keys and select using the Enter key.</p>
+    <p><strong>Returns</strong>:</p>
+    <ul>
+        <li><code>bool</code>: <code>True</code> if the user selects 'y' (Yes), <code>False</code> if the user selects 'n' (No).</li>
+    </ul>
+    <p><strong>Usage</strong>:</p>
+    <pre><code>show_ip = toggle_prompt()</code></pre>
+
+    <h2>Main Script Execution</h2>
+    <p>The script follows these steps when executed:</p>
+    <ol>
+        <li><strong>Print the Script Header</strong>: Displays a header line for visual separation.
+            <pre><code>print("----------------------------------------------------------------------------------------------------------------------------------#")</code></pre>
+        </li>
+        <li><strong>Library Imports and Installation</strong>: Attempts to import <code>requests</code> and <code>keyboard</code>. If the import fails, it installs the library using <code>pip</code> and then re-imports it.
+            <pre><code>try:
+    import requests
+except ImportError:
+    install_library('requests')
+    import requests
+
+try:
+    import keyboard
+except ImportError:
+    install_library('keyboard')
+    import keyboard
+</code></pre>
+        </li>
+        <li><strong>Display Logo</strong>: Prints a colorful ASCII art logo to the console.
+            <pre><code>print(logo)</code></pre>
+        </li>
+        <li><strong>Toggle Prompt</strong>: Calls the <code>toggle_prompt()</code> function to get the user's choice on whether to display the IP addresses.
+            <pre><code>show_ip = toggle_prompt()</code></pre>
+        </li>
+        <li><strong>Display IP Addresses</strong>: If the user chooses to display IP addresses, the script fetches the public and private IP addresses and prints them.
+            <pre><code>if show_ip:
+    public_ip = get_public_ip()
+    private_ip = get_private_ip()
+    print(f"\nYour Public IP address is: {bold}{public_ip}{reset}")
+    print(f"\nYour Private IP address is: {bold}{private_ip}{reset}")</code></pre>
+        </li>
+    </ol>
+
+    <h2>Example Usage</h2>
+    <p>To run this script, save it as a <code>.py</code> file and execute it in a terminal or command prompt:</p>
+    <pre><code>python script_name.py</code></pre>
+    <p>Follow the on-screen instructions to toggle and display your IP addresses.</p>
+
+    <h2>Notes</h2>
+    <ul>
+        <li>Ensure you have internet access to retrieve the public IP address using the ipify API.</li>
+        <li>The script uses ANSI escape codes for coloring text in the terminal, which might not be supported in all environments.</li>
+    </ul>
+
+    <div class="footer">
+        <p>&copy; IP GRABBER</p>
+    </div>
+</body>
+</html>
